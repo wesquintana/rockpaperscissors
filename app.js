@@ -29,7 +29,7 @@ function Lose() {
 function addChoices() {
   document.getElementById("options").innerHTML = "";
   let numElem = document.getElementById("numElem").value;
-  if (numElem % 2 && numElem > 2) {
+  if (numElem % 2 && numElem > 2 && numElem < Number.MAX_SAFE_INTEGER) {
     for (let i = 0; i < numElem; i++) {
       document.getElementById(
         "options"
@@ -38,6 +38,8 @@ function addChoices() {
     <h2>${i + 1}</h2>
   </div>`;
     }
+  } else if (numElem > Number.MAX_SAFE_INTEGER) {
+    alert("Error, that number is too big.");
   } else {
     alert("Error, number has to be greater than 2 and odd");
   }
