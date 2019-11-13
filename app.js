@@ -1,7 +1,7 @@
 function play(playerChoice) {
   let computerChoice =
     Math.floor(document.getElementById("numElem").value * Math.random()) + 1;
-  //confusingTempValue is just a variable that is used to keep the logic of expanded rock-paper-scissors games. It evaluates whether or not one item will beat any other based upon whether the difference between the two is even or odd and whether its positive or negative
+  //confusingTempValue is just a variable that is used to keep the logic of expanded rock-paper-scissors games. It evaluates whether or not one item will beat any other based upon whether the difference between the two is even or odd and whether it's positive or negative
   let confusingTempValue = playerChoice - computerChoice;
   if (confusingTempValue === 0) {
     Tie();
