@@ -13,17 +13,30 @@
   </head>
   <body>
     <header>
-      <div class="container-fluid">
+      <div class="container-fluid d-flex justify-content-center">
         <div class="row">
           <div class="col"><h1>ROCK, PAPER, SCISSORS</h1></div>
         </div>
       </div>
     </header>
     <main>
-      <div class="container-fluid">
+      <div class="container-fluid ">
+        <div class="row d-flex justify-content-center">
+          <div class="col-12 text-center">
+            <form action="">
+              <input type="number" id="numElem" value="3" /><button
+                type="button"
+                class="btn btn-primary"
+                onclick="addChoices()"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center" id="options"></div>
         <div class="row">
-          <div class="col-6"></div>
-          <div class="col-6"></div>
+          <div class="col"><p id="results"></p></div>
         </div>
       </div>
     </main>

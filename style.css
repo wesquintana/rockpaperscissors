@@ -1,0 +1,4 @@
+.choice:hover {
+  background-color: rgba(234, 234, 56, 0.5);
+  cursor: pointer;
+}
