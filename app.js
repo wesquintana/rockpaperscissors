@@ -1,7 +1,12 @@
+let currentComputerChoice = 0;
+let currentPlayerChoice = 0;
+
 function play(playerChoice) {
   let computerChoice =
     Math.floor(document.getElementById("numElem").value * Math.random()) + 1;
-  //confusingTempValue is just a variable that is used to keep the logic of expanded rock-paper-scissors games. It evaluates whether or not one item will beat any other based upon whether the difference between the two is even or odd and whether it's positive or negative
+  currentComputerChoice = computerChoice;
+  currentPlayerChoice = playerChoice;
+  //confusingTempValue is just a variable that is used to keep the logic of expanded rock-paper-scissors games. It evaluates whether or not one item will beat any other based upon whether the difference between the two is even or odd and whether it's positive or negative; neccessitates that every option can beat the option that is one higher than itself
   let confusingTempValue = playerChoice - computerChoice;
   if (confusingTempValue === 0) {
     Tie();
@@ -18,14 +23,19 @@ function play(playerChoice) {
   }
 }
 function Tie() {
-  document.getElementById("results").innerText = "Draw";
+  document.getElementById(
+    "results"
+  ).innerText = `${currentPlayerChoice} is matched by ${currentComputerChoice}. It's a Draw.`;
 }
 function Win() {
-  document.getElementById("results").innerText = "You Win!";
+  document.getElementById(
+    "results"
+  ).innerText = `${currentPlayerChoice} beats ${currentComputerChoice}. You Win!`;
 }
 function Lose() {
-  document.getElementById("results").innerText =
-    "You Lose. You get nothing. Good day, sir. I SAID GOOD DAY!";
+  document.getElementById(
+    "results"
+  ).innerText = `${currentPlayerChoice} fails against ${currentComputerChoice}. You Lose. You get nothing. Good day, sir. I SAID GOOD DAY!`;
 }
 function addChoices() {
   document.getElementById("options").innerHTML = "";
