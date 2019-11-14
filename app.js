@@ -3,6 +3,7 @@ let currentPlayerChoice = 0;
 let numElem = document.getElementById("numElem");
 function play(playerChoice) {
   //used a bitwise operator to truncate. Not very safe most of the time, but since any number large enough to cause errors would also grind most computers to a halt or get caught by the safe number detector, I decided the very small efficiency boost was worth it. Even though its nearly negligible.
+  // @ts-ignore
   let computerChoice = ~~(numElem.value * Math.random()) + 1;
   currentComputerChoice = computerChoice;
   currentPlayerChoice = playerChoice;
@@ -39,6 +40,7 @@ function Lose() {
 }
 function addChoices() {
   document.getElementById("options").innerHTML = "";
+  // @ts-ignore
   let numberElem = numElem.value;
   if (
     numberElem % 2 &&
